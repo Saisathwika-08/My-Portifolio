@@ -1,0 +1,167 @@
+:root {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --primary: #3c6e71;
+  --text: #ffffff;
+  --muted: #cfcfcf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* Cursor Glow */
+.cursor-glow {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(60,110,113,0.25), transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 10%;
+  background: var(--card);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav a {
+  margin-left: 20px;
+  color: var(--muted);
+  text-decoration: none;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero */
+.hero {
+  min-height: 90vh;
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+}
+
+.hero h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 3rem;
+}
+
+.hero h2 {
+  color: var(--primary);
+}
+
+/* Sections */
+section {
+  padding: 80px 10%;
+}
+
+.section-title {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 40px;
+}
+
+.center {
+  text-align: center;
+  color: var(--muted);
+}
+
+/* Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 15px;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* Skills */
+.skill {
+  margin-bottom: 20px;
+}
+
+.bar {
+  background: #444;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--primary);
+  transition: width 1.5s ease;
+}
+
+/* Contact */
+.contact-box {
+  max-width: 500px;
+  margin: auto;
+  background: var(--card);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0e0e0e;
+}
